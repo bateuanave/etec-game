@@ -1,0 +1,45 @@
+# Project: Projeto1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = game_init.o load_bg.o installs.o load_sound.o Source.o inittext.o $(RES)
+LINKOBJ  = game_init.o load_bg.o installs.o load_sound.o Source.o inittext.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -lallegro-5.0.4-monolith-mt -lshlwapi 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = Projeto1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Projeto1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Projeto1.exe" $(LIBS)
+
+game_init.o: game_init.cpp
+	$(CPP) -c game_init.cpp -o game_init.o $(CXXFLAGS)
+
+load_bg.o: load_bg.cpp
+	$(CPP) -c load_bg.cpp -o load_bg.o $(CXXFLAGS)
+
+installs.o: installs.cpp
+	$(CPP) -c installs.cpp -o installs.o $(CXXFLAGS)
+
+load_sound.o: load_sound.cpp
+	$(CPP) -c load_sound.cpp -o load_sound.o $(CXXFLAGS)
+
+Source.o: Source.cpp
+	$(CPP) -c Source.cpp -o Source.o $(CXXFLAGS)
+
+inittext.o: inittext.cpp
+	$(CPP) -c inittext.cpp -o inittext.o $(CXXFLAGS)
