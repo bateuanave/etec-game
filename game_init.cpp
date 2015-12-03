@@ -2,7 +2,7 @@
 using namespace std;
 ALLEGRO_DISPLAY *window = NULL;
 const int wGame = 600;
-const int hGame = 400;
+const int hGame = 358;
 int game_init() {
 	al_init();
 	installs();
@@ -12,8 +12,8 @@ int game_init() {
 	al_flip_display();
 	load_bg();
 	menu_text();
-	al_rest(2);
-	load_sound();
+	threads();
+	registros();
 	al_destroy_display(window);
 	return 0;
 }

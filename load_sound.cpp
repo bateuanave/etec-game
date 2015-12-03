@@ -11,5 +11,4 @@ int load_sound(){
    al_rest(30);
    al_destroy_sample(sample);
    return 0;
-
 }

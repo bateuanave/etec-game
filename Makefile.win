@@ -5,8 +5,8 @@ CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = 
-OBJ  = game_init.o load_bg.o installs.o load_sound.o Source.o inittext.o $(RES)
-LINKOBJ  = game_init.o load_bg.o installs.o load_sound.o Source.o inittext.o $(RES)
+OBJ  = game_init.o load_bg.o installs.o load_sound.o Source.o inittext.o registers.o threads.o makemarc.o $(RES)
+LINKOBJ  = game_init.o load_bg.o installs.o load_sound.o Source.o inittext.o registers.o threads.o makemarc.o $(RES)
 LIBS =  -L"C:/Dev-Cpp/lib" -lallegro-5.0.4-monolith-mt -lshlwapi 
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
@@ -43,3 +43,12 @@ Source.o: Source.cpp
 
 inittext.o: inittext.cpp
 	$(CPP) -c inittext.cpp -o inittext.o $(CXXFLAGS)
+
+registers.o: registers.cpp
+	$(CPP) -c registers.cpp -o registers.o $(CXXFLAGS)
+
+threads.o: threads.cpp
+	$(CPP) -c threads.cpp -o threads.o $(CXXFLAGS)
+
+makemarc.o: makemarc.cpp
+	$(CPP) -c makemarc.cpp -o makemarc.o $(CXXFLAGS)

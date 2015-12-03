@@ -26,4 +26,12 @@ int installs(){
 /// IMAGE
 al_init_image_addon();
 //
+
+///////////
+//mouse
+ if(!al_install_keyboard()) {
+      fprintf(stderr, "failed to initialize the keyboard!\n");
+      return -1;
+   }
+   
 }

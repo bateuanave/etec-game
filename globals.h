@@ -6,6 +6,7 @@
 #include <allegro5\allegro_font.h>
 #include <allegro5\allegro_ttf.h>
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 #ifndef _GLOBALS_H
 #define _GLOBALS_H
@@ -14,5 +15,8 @@ int load_bg();
 int load_sound();
 int installs();
 int menu_text();
+int registros();
+int threads();
+int makemarc();
 
 #endif
